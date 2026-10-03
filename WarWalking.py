@@ -13,15 +13,13 @@ def escanear():
             capture_output=True, text=True, timeout=20
         )
         data = json.loads(r.stdout)
-    except FileNotFoundError:
-        sys.exit("Error: falta termux-api. Instala con: pkg install termux-api ""(y la app Termux:API desde F-Droid).")
+    except FileNotFoundError:sys.exit("Error: falta termux-api. Instala con: pkg install termux-api ""(y la app Termux:API desde F-Droid).")
     except (subprocess.TimeoutExpired, json.JSONDecodeError):return []
     if isinstance(data, dict):print(f"[!] {data.get('API_ERROR') or data.get('error') or data}");return []
     return data
 
 def guardar(redes, nombre):
-    with open(nombre, "w", encoding="utf-8") as f:
-        json.dump(list(redes.values()), f, indent=4, ensure_ascii=False)
+    with open(nombre, "w", encoding="utf-8") as f:json.dump(list(redes.values()), f, indent=4, ensure_ascii=False)
 
 parser = argparse.ArgumentParser(description="Escáner de redes WiFi para Termux")
 parser.add_argument("-i", "--intervalo", type=float, default=5,help="segundos entre escaneos (por defecto 5)")
