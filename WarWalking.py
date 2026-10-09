@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-import argparse
-import json
-import subprocess
-import sys
-import time
+import argparse, json, subprocess, sys, time
 from datetime import datetime
 
 def escanear():
