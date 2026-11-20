@@ -90,9 +90,8 @@ while True:
     print("0. Salir")
     print("=" * 46)
 
-    try: opcion = input("Selecciona una opción: ").strip()
-    except (EOFError, KeyboardInterrupt):print("\nHasta luego.");break
-        match opcion:
+    try:
+        match input("Selecciona una opción: ").strip():
             case "1":Iniciar()
             case "2":Intervalo()
             case "3":Salida()
@@ -101,3 +100,4 @@ while True:
             case "0":if redes:Guardar()
                 print("Hasta luego!");break
             case _:print("[!] Opción no válida.")
+    except (EOFError, KeyboardInterrupt):print("\nHasta luego.");break
