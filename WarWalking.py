@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import json, subprocess, sys, time
 from datetime import datetime
 
