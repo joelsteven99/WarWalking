@@ -91,12 +91,12 @@ while True:
     
     try:
         match opcion = input("Selecciona una opción: "):
-            case "1":Iniciar()
-            case "2":Intervalo()
-            case "3":Salida()
-            case "4":Ver()
-            case "5":Guardar()
-            case "0":if redes:Guardar()
+            case 1:Iniciar()
+            case 2:Intervalo()
+            case 3:Salida()
+            case 4:Ver()
+            case 5:Guardar()
+            case 0:if redes:Guardar()
                 print("Hasta luego!")
                 break
             case _:print("[!] Opción no válida.")
