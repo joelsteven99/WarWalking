@@ -98,6 +98,7 @@ while True:
             case "4":Ver()
             case "5":Guardar()
             case "0":
-                if redes:Guardar();print("Hasta luego!");break
+                if redes:Guardar()
+                print("Hasta luego!");break
             case _:print("[!] Opción no válida.")
     except (EOFError, KeyboardInterrupt):print("\nHasta luego.");break
