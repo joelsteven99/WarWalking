@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import json, subprocess, sys, time
 from datetime import datetime
 
@@ -88,16 +89,15 @@ while True:
     print("5. Guardar ahora")
     print("0. Salir")
     print("=" * 46)
-    
-    try:
-        match opcion = input("Selecciona una opción: "):
-            case 1:Iniciar()
-            case 2:Intervalo()
-            case 3:Salida()
-            case 4:Ver()
-            case 5:Guardar()
-            case 0:if redes:Guardar()
-                print("Hasta luego!")
-                break
+
+    try: opcion = input("Selecciona una opción: ").strip()
+        match opcion:
+            case "1":Iniciar()
+            case "2":Intervalo()
+            case "3":Salida()
+            case "4":Ver()
+            case "5":Guardar()
+            case "0":if redes:Guardar()
+                print("Hasta luego!");break
             case _:print("[!] Opción no válida.")
     except (EOFError, KeyboardInterrupt):print("\nHasta luego.");break
